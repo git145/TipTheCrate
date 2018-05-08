@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\place_autocomplete_fragment.xml",
+        "source": "C:\\Users\\owner\\.android\\build-cache\\b274a748dd5070751651317c809adb262fc0cd21\\output\\res\\layout-v21\\place_autocomplete_fragment.xml"
+    },
+    {
+        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]

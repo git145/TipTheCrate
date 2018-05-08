@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tipthecrate.tipthecrate">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- android:screenOrientation="portrait" prevents the screen from rotating during this activity -->
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".MainActivity" >
+
+            <!--
+                 An intent filter specifies the types of intents to which an activity, service, or broadcast
+                 receiver can respond to by declaring the capabilities of a component. Android components
+                 register intent filters either statically in the AndroidManifest.xml or in case of a broadcast
+                 receiver also dynamically via code.
+            -->
+            <intent-filter>
+
+                <!-- GameActivity is the entry point for the application -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- It should appear in the Launcher as a top-level application -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activities not displayed to the user -->
+        <activity android:name=".SquareActivity" />
+        <activity android:name=".GameActivity" />
+        <activity android:name=".BoardActivity" />
+        <activity android:name=".DifficultyActivity" />
+
+        <!--
+             Each screen in your app that is not the entrance (all screens that are not the "home" screen)
+             should provide navigation so the user can return to the logical parent screen in the app hierarchy
+             by tapping the up button in the app bar.
+        -->
+        <activity android:name=".GameContinuousActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity" >
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".GameTimedActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity" >
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".HowToPlayActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity" >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".GamePracticeActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity" >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Define the  sizes of device that the application can be downloaded for -->
+        <!-- anyDensity should only be false in exceptional circumstances -->
+        <supports-screens
+            android:smallScreens="false"
+            android:normalScreens="true"
+            android:largeScreens="true"
+            android:xlargeScreens="false"
+            android:anyDensity="true"/>
+
+        <!-- Add Play Services meta-data -->
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>

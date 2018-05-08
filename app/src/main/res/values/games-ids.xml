@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+    <string name="app_id" translatable="false">1026011340041</string>
+    <string name="package_name" translatable="false">com.tipthecrate.tipthecrate</string>
+    <string name="achievement_little_tipper" translatable="false">CgkIibqqmO4dEAIQAw</string>
+    <string name="achievement_leave_my_crates_alone" translatable="false">CgkIibqqmO4dEAIQCg</string>
+    <string name="achievement_jack_in_the_box" translatable="false">CgkIibqqmO4dEAIQCw</string>
+    <string name="achievement_boxing_clever" translatable="false">CgkIibqqmO4dEAIQDA</string>
+    <string name="achievement_youre_crate" translatable="false">CgkIibqqmO4dEAIQCA</string>
+    <string name="achievement_big_tipper" translatable="false">CgkIibqqmO4dEAIQDQ</string>
+    <string name="achievement_wood_star" translatable="false">CgkIibqqmO4dEAIQBA</string>
+    <string name="achievement_stack_attack" translatable="false">CgkIibqqmO4dEAIQDg</string>
+    <string name="achievement_wood_you_believe_it" translatable="false">CgkIibqqmO4dEAIQDw</string>
+    <string name="achievement_thinking_outside_the_box" translatable="false">CgkIibqqmO4dEAIQEA</string>
+    <string name="achievement_crate_balls_of_fire" translatable="false">CgkIibqqmO4dEAIQCQ</string>
+    <string name="achievement_ive_run_out_of_crate_related_puns" translatable="false">CgkIibqqmO4dEAIQEQ</string>
+    <string name="achievement_health_and_safety_nightmare" translatable="false">CgkIibqqmO4dEAIQBw</string>
+    <string name="achievement_practice_makes_perfect" translatable="false">CgkIibqqmO4dEAIQBQ</string>
+    <string name="achievement_all_time_crate" translatable="false">CgkIibqqmO4dEAIQBg</string>
+    <string name="leaderboard_continuous" translatable="false">CgkIibqqmO4dEAIQAQ</string>
+    <string name="leaderboard_timed" translatable="false">CgkIibqqmO4dEAIQAg</string>
+</resources>

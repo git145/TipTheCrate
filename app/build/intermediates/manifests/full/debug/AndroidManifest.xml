@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tipthecrate.tipthecrate"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="25" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <!-- android:screenOrientation="portrait" prevents the screen from rotating during this activity -->
+        <activity
+            android:name="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+
+            <!--
+                 An intent filter specifies the types of intents to which an activity, service, or broadcast
+                 receiver can respond to by declaring the capabilities of a component. Android components
+                 register intent filters either statically in the AndroidManifest.xml or in case of a broadcast
+                 receiver also dynamically via code.
+            -->
+            <intent-filter>
+
+                <!-- GameActivity is the entry point for the application -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- It should appear in the Launcher as a top-level application -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activities not displayed to the user -->
+        <activity android:name="com.tipthecrate.tipthecrate.SquareActivity" />
+        <activity android:name="com.tipthecrate.tipthecrate.GameActivity" />
+        <activity android:name="com.tipthecrate.tipthecrate.BoardActivity" />
+        <activity android:name="com.tipthecrate.tipthecrate.DifficultyActivity" />
+
+        <!--
+             Each screen in your app that is not the entrance (all screens that are not the "home" screen)
+             should provide navigation so the user can return to the logical parent screen in the app hierarchy
+             by tapping the up button in the app bar.
+        -->
+        <activity
+            android:name="com.tipthecrate.tipthecrate.GameContinuousActivity"
+            android:parentActivityName="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.tipthecrate.tipthecrate.GameTimedActivity"
+            android:parentActivityName="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.tipthecrate.tipthecrate.HowToPlayActivity"
+            android:parentActivityName="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.tipthecrate.tipthecrate.GamePracticeActivity"
+            android:parentActivityName="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Define the  sizes of device that the application can be downloaded for -->
+        <!-- anyDensity should only be false in exceptional circumstances -->
+        <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:smallScreens="false"
+            android:xlargeScreens="false" />
+
+        <!-- Add Play Services meta-data -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

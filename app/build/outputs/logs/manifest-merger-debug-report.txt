@@ -1,0 +1,186 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:2:1-103:12
+	package
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:2:70-107
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:4:5-102:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c4c322762dd1a36457c9b2187ab49f04421e137\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c04555056f268ad3af93c9f6c95faa54cfa92eb\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\owner\.android\build-cache\6940ac366bca6547b1eaece0ff59e3c1d0d92a09\output\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-games:11.0.2] C:\Users\owner\.android\build-cache\7130ddf733ca943a4b4c4682995b7eb7874ab15c\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:11.0.2] C:\Users\owner\.android\build-cache\1530f054ec121ef33d8be9904398386a771dab2f\output\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\owner\.android\build-cache\b0b8733892ec3ff1abb9b6af681d1b4370c95b20\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\owner\.android\build-cache\5b0c01ebeec3c6b58c36c9486198d320432820fc\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\owner\.android\build-cache\2f4b134e9ff4c07d833d8775cdc7fed39f3b9708\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\owner\.android\build-cache\5a6580e2da19e5b183dfc2d446a41d6d695c1498\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\owner\.android\build-cache\c34d77867476e3a19d5f54d0c5ab2b481130fa18\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\owner\.android\build-cache\fb3245e52d4b1bb351b9a5c956982ac30fa91ba8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\owner\.android\build-cache\2e330c93ec9560f7ccacdc9895f50bbc2d3d9c1a\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\owner\.android\build-cache\debc50316f2cbb82c1385ea5d0af61d3ce8c0e66\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:7:9-41
+	android:supportsRtl
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:9:9-35
+	android:roundIcon
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:8:9-54
+	android:allowBackup
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:5:9-35
+	android:icon
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:6:9-43
+	android:theme
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:10:9-40
+activity#com.tipthecrate.tipthecrate.MainActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:13:9-31:20
+	android:screenOrientation
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:14:13-49
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:15:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:23:13-30:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:29:27-74
+activity#com.tipthecrate.tipthecrate.SquareActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:34:9-52
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:34:19-49
+activity#com.tipthecrate.tipthecrate.GameActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:35:9-50
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:35:19-47
+activity#com.tipthecrate.tipthecrate.BoardActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:36:9-51
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:36:19-48
+activity#com.tipthecrate.tipthecrate.DifficultyActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:37:9-56
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:37:19-53
+activity#com.tipthecrate.tipthecrate.GameContinuousActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:44:9-52:20
+	android:screenOrientation
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:45:13-49
+	android:parentActivityName
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:46:13-55
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:44:19-57
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:49:13-51:49
+	android:value
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:51:17-46
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:50:17-63
+activity#com.tipthecrate.tipthecrate.GameTimedActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:54:9-62:20
+	android:screenOrientation
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:55:13-49
+	android:parentActivityName
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:56:13-55
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:54:19-52
+activity#com.tipthecrate.tipthecrate.HowToPlayActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:64:9-71:20
+	android:screenOrientation
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:65:13-49
+	android:parentActivityName
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:66:13-55
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:64:19-52
+activity#com.tipthecrate.tipthecrate.GamePracticeActivity
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:73:9-80:20
+	android:screenOrientation
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:74:13-49
+	android:parentActivityName
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:75:13-55
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:73:19-55
+supports-screens
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:84:9-89:40
+	android:largeScreens
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:87:13-40
+	android:smallScreens
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:85:13-41
+	android:normalScreens
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:86:13-41
+	android:xlargeScreens
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:88:13-42
+	android:anyDensity
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:89:13-38
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:92:9-93:69
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\owner\.android\build-cache\5b0c01ebeec3c6b58c36c9486198d320432820fc\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:93:13-66
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:92:20-65
+meta-data#com.google.android.gms.games.APP_ID
+ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:96:9-98:46
+	android:value
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:98:13-43
+	android:name
+		ADDED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml:97:13-63
+uses-sdk
+INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c4c322762dd1a36457c9b2187ab49f04421e137\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c04555056f268ad3af93c9f6c95faa54cfa92eb\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\owner\.android\build-cache\6940ac366bca6547b1eaece0ff59e3c1d0d92a09\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-games:11.0.2] C:\Users\owner\.android\build-cache\7130ddf733ca943a4b4c4682995b7eb7874ab15c\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-drive:11.0.2] C:\Users\owner\.android\build-cache\1530f054ec121ef33d8be9904398386a771dab2f\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.2] C:\Users\owner\.android\build-cache\b0b8733892ec3ff1abb9b6af681d1b4370c95b20\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.2] C:\Users\owner\.android\build-cache\5b0c01ebeec3c6b58c36c9486198d320432820fc\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\owner\.android\build-cache\2f4b134e9ff4c07d833d8775cdc7fed39f3b9708\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\owner\.android\build-cache\5a6580e2da19e5b183dfc2d446a41d6d695c1498\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\owner\.android\build-cache\c34d77867476e3a19d5f54d0c5ab2b481130fa18\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\owner\.android\build-cache\fb3245e52d4b1bb351b9a5c956982ac30fa91ba8\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\owner\.android\build-cache\2e330c93ec9560f7ccacdc9895f50bbc2d3d9c1a\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\owner\.android\build-cache\debc50316f2cbb82c1385ea5d0af61d3ce8c0e66\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\owner\AndroidStudioProjects\TipTheCrate\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c4c322762dd1a36457c9b2187ab49f04421e137\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\owner\.android\build-cache\7c04555056f268ad3af93c9f6c95faa54cfa92eb\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\owner\.android\build-cache\2f4b134e9ff4c07d833d8775cdc7fed39f3b9708\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\owner\.android\build-cache\5a6580e2da19e5b183dfc2d446a41d6d695c1498\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\owner\.android\build-cache\c34d77867476e3a19d5f54d0c5ab2b481130fa18\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\owner\.android\build-cache\fb3245e52d4b1bb351b9a5c956982ac30fa91ba8\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\owner\.android\build-cache\2e330c93ec9560f7ccacdc9895f50bbc2d3d9c1a\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\owner\.android\build-cache\debc50316f2cbb82c1385ea5d0af61d3ce8c0e66\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\owner\.android\build-cache\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\output\AndroidManifest.xml:26:9-47
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.2] C:\Users\owner\.android\build-cache\59321dae6bac29d6999c237dbd58395272c52212\output\AndroidManifest.xml:19:19-85

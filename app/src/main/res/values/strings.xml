@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Tip the Crates</string>
+    <string name="how_to_play">how to play</string>
+    <string name="scores">scores</string>
+    <string name="achievements">achievements</string>
+    <string name="continuous">continuous</string>
+    <string name="timed">timed</string>
+    <string name="practice">practice</string>
+    <string name="score_sample">score: 99999</string>
+    <string name="level_sample">level: 99999</string>
+    <string name="timeSample" translatable="false">99</string>
+    <string name="difficulty_first">beginner</string>
+    <string name="difficulty_second">intermediate</string>
+    <string name="difficulty_third">advanced</string>
+    <string name="difficulty_fourth">expert</string>
+    <string name="leader_board_cont">Continuous</string>
+    <string name="leader_board_timed">Timed</string>
+    <string name="level">level</string>
+    <string name="score">score</string>
+    <string name="tip_can">You can tip these crates</string>
+    <string name="tip_can_not">But not these crates</string>
+    <string name="brown_access">You can access the brown crates but must tip crates to reach the grey or yellow crates</string>
+    <string name="win">You win a level when you reach the yellow crate</string>
+    <string name="pillars_numbered">The pillars of crates are numbered with their height</string>
+    <string name="pillars_flick">Flick the pillars of crates to tip them</string>
+    <string name="difficulty_increase">The difficulty increases as the game progresses</string>
+    <string name="practice_use">Play the practice game to improve your skills</string>
+    <string name="good_luck">Good luck!</string>
+</resources>

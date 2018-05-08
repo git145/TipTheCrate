@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="boardSize">220dp</dimen>
+    <dimen name="fontSize">12sp</dimen>
+    <dimen name="spacingButton">6dp</dimen>
+    <dimen name="mainMarginLarge">16dp</dimen>
+    <dimen name="mainMarginSmall">32dp</dimen>
+    <dimen name="otherButtonSize">20dp</dimen>
+    <dimen name="otherButtonSizeGame">30dp</dimen>
+    <dimen name="otherButtonMargin">8dp</dimen>
+</resources>
