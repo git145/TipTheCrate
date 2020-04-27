@@ -5,12 +5,16 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="25" />
-
-    <meta-data
-        android:name="android.support.VERSION"
-        android:value="25.3.1" />
+        android:minSdkVersion="21"
+        android:targetSdkVersion="26" />
+    <!-- Define the  sizes of device that the application can be downloaded for -->
+    <!-- anyDensity should only be false in exceptional circumstances -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="false" />
 
     <application
         android:allowBackup="true"
@@ -45,7 +49,6 @@
         <activity android:name="com.tipthecrate.tipthecrate.SquareActivity" />
         <activity android:name="com.tipthecrate.tipthecrate.GameActivity" />
         <activity android:name="com.tipthecrate.tipthecrate.BoardActivity" />
-        <activity android:name="com.tipthecrate.tipthecrate.DifficultyActivity" />
 
         <!--
              Each screen in your app that is not the entrance (all screens that are not the "home" screen)
@@ -88,15 +91,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
-        <!-- Define the  sizes of device that the application can be downloaded for -->
-        <!-- anyDensity should only be false in exceptional circumstances -->
-        <supports-screens
-            android:anyDensity="true"
-            android:largeScreens="true"
-            android:normalScreens="true"
-            android:smallScreens="false"
-            android:xlargeScreens="false" />
+        <activity
+            android:name="com.tipthecrate.tipthecrate.SettingsActivity"
+            android:parentActivityName="com.tipthecrate.tipthecrate.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
         <!-- Add Play Services meta-data -->
         <meta-data
@@ -108,6 +110,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.0.1" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

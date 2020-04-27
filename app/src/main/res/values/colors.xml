@@ -6,10 +6,10 @@
     <color name="colorBackground">@color/gray</color>
     <color name="yellow">#dcbf3a</color>
     <color name="orange">#f17a0a</color>
-    <color name="blue">#0099cc</color>
+    <color name="blue">#1b47ac</color>
     <color name="red">#c13d3a</color>
     <color name="purple">#aa66cc</color>
-    <color name="green">#00cc44</color>
+    <color name="green">#16b944</color>
     <color name="white">#ffffff</color>
     <color name="pink">#ff69aa</color>
     <color name="gray">#828282</color>

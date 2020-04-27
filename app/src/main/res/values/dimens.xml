@@ -10,4 +10,9 @@
     <dimen name="otherButtonSize">40dp</dimen>
     <dimen name="otherButtonSizeGame">35dp</dimen>
     <dimen name="otherButtonMargin">8dp</dimen>
+    <dimen name="button_main_size">250dp</dimen>
+    <dimen name="margin_name_bar_horiz">16dp</dimen>
+    <dimen name="margin_name_bar_vert">6dp</dimen>
+    <dimen name="text_box_width">120dp</dimen>
+    <dimen name="text_size_settings">100dp</dimen>
 </resources>

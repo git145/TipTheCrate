@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+        "outputFile": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\e2dd007ab0a4fa24c86e78cf18ecae99c515090d\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\e2dd007ab0a4fa24c86e78cf18ecae99c515090d\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\e2dd007ab0a4fa24c86e78cf18ecae99c515090d\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,165 +68,13 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\e2dd007ab0a4fa24c86e78cf18ecae99c515090d\\output\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
                         "startOffset": 260,
                         "endColumn": 67,
                         "endOffset": 323
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 328,
-                    "endColumn": 41,
-                    "endOffset": 365
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 57,
-                        "endColumn": 41,
-                        "endOffset": 94
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 370,
-                    "endColumn": 39,
-                    "endOffset": 405
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 100,
-                        "endColumn": 39,
-                        "endOffset": 135
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 410,
-                    "endColumn": 46,
-                    "endOffset": 452
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 186,
-                        "endColumn": 46,
-                        "endOffset": 228
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 457,
-                    "endColumn": 46,
-                    "endOffset": 499
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 234,
-                        "endColumn": 46,
-                        "endOffset": 276
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 504,
-                    "endColumn": 47,
-                    "endOffset": 547
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 382,
-                        "endColumn": 47,
-                        "endOffset": 425
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 552,
-                    "endColumn": 46,
-                    "endOffset": 594
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 282,
-                        "endColumn": 46,
-                        "endOffset": 324
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 599,
-                    "endColumn": 50,
-                    "endOffset": 645
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 330,
-                        "endColumn": 50,
-                        "endOffset": 376
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 650,
-                    "endColumn": 43,
-                    "endOffset": 689
-                },
-                "from": {
-                    "file": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\values-land\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 141,
-                        "endColumn": 43,
-                        "endOffset": 180
                     }
                 }
             }

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+        "outputFile": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,34 @@
                     "endOffset": 116
                 },
                 "from": {
-                    "file": "C:\\Users\\owner\\.android\\build-cache\\0ce6fcda2f7080bf1b687b15c61ed39883838f6f\\output\\res\\values-v16\\values-v16.xml",
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\7885118a17dfcd3b67648caa9363956c834989f1\\output\\res\\values-v16\\values-v16.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 55,
                         "endColumn": 65,
                         "endOffset": 116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 121,
+                    "endLine": 6,
+                    "endColumn": 12,
+                    "endOffset": 289
+                },
+                "from": {
+                    "file": "C:\\Users\\owner\\.android\\build-cache\\e2dd007ab0a4fa24c86e78cf18ecae99c515090d\\output\\res\\values-v16\\values-v16.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 223
                     }
                 }
             }

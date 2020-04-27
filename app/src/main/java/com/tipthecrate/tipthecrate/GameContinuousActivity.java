@@ -35,10 +35,14 @@ public class GameContinuousActivity extends GameActivity
         super.onCreate(savedInstanceState);
 
         // Display the associated XML file on a device
-        setContentView(R.layout.activity_continuous_game);
+        setContentView(R.layout.activity_game);
 
-        // Reset the variables in GameActivity
-        setVariables(IS_GAME_CONTINUOUS, IS_NOT_GAME_PRACTICE);
+        // Reset variables
+        setVariables(IS_GAME_CONTINUOUS);
+        setVariablesGameContinuous();
+
+        // Set the clock
+        setClock();
 
         // Start the first level of the game
         startFirstLevelContinuous();
@@ -94,6 +98,25 @@ public class GameContinuousActivity extends GameActivity
 
         // Stop the timer
         stopClock();
+
+        // Clear the sound pool from the memory
+        releaseSoundPool();
+    }
+
+    // Sets variables before a continuous game
+    private void setVariablesGameContinuous()
+    {
+        textLevel = findViewById(R.id.text0);
+        textDifficulty = findViewById(R.id.text1);
+
+        buttonRestart = findViewById(R.id.buttonRight);
+        setRestartButtonImage();
+
+        // Set the taunt sound
+        if (isGameSounds)
+        {
+            setTaunt();
+        }
     }
 
     // Begins the first level of a continuous game
@@ -352,7 +375,7 @@ public class GameContinuousActivity extends GameActivity
             // Access the button in the display file
             String buttonID = "button" + square;
             int resourceID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = (Button) findViewById(resourceID);
+            Button button = findViewById(resourceID);
 
             // Add an ID to the button
             button.setTag(square);
@@ -422,6 +445,7 @@ public class GameContinuousActivity extends GameActivity
                     // Update the board ready for the next turn
                     boardCurrent = boardToCheck;
                     paintBoard(boardCurrent);
+                    playClick();
 
                     // Leave the loop
                     break;
@@ -445,6 +469,8 @@ public class GameContinuousActivity extends GameActivity
     {
         // Stop the clock
         stopClock();
+
+        congratulate();
 
         // Update progress towards achievements
         checkAchievementsContinuous();
@@ -508,12 +534,14 @@ public class GameContinuousActivity extends GameActivity
         // Upload the score to the leader board if it is the user's best
         uploadContinuousScore();
 
-        // Add a restart button
-        (buttonRestart = (Button)findViewById(R.id.buttonRestart)).setVisibility(View.VISIBLE);
+        // Show the restart button
+        buttonRestart.setVisibility(View.VISIBLE);
         buttonRestart.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
+                playClick();
+
                 // Begin a new continuous game
                 newContinuousGame();
             }

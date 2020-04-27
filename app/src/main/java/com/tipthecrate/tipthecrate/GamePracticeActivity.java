@@ -34,10 +34,14 @@ public class GamePracticeActivity extends GameActivity
         super.onCreate(savedInstanceState);
 
         // Display the associated XML file on a device
-        setContentView(R.layout.activity_practice_game);
+        setContentView(R.layout.activity_game);
 
-        // Reset the variables in GameActivity
-        setVariables(IS_NOT_GAME_CONTINUOUS, isGamePractice);
+        // Reset variables
+        setVariables(IS_NOT_GAME_CONTINUOUS);
+        setVariablesGamePractice();
+
+        // Set the clock
+        setClock();
 
         // Create the first level
         startLevel(isGamePractice);
@@ -96,6 +100,18 @@ public class GamePracticeActivity extends GameActivity
 
         // Stop the timer
         stopClock();
+
+        // Clear the sound pool from the memory
+        releaseSoundPool();
+    }
+
+    // Sets variables before a continuous game
+    private void setVariablesGamePractice()
+    {
+        textDifficulty = findViewById(R.id.text2);
+
+        // Access the undo button in the XML file
+        buttonUndo = findViewById(R.id.buttonRight);
     }
 
     // Add functionality to the buttons on the board
@@ -107,7 +123,7 @@ public class GamePracticeActivity extends GameActivity
             // Access the button in the display file
             String buttonID = "button" + square;
             int resourceID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = (Button) findViewById(resourceID);
+            Button button = findViewById(resourceID);
 
             // Add an ID to the button
             button.setTag(square);
@@ -195,6 +211,8 @@ public class GamePracticeActivity extends GameActivity
     {
         // Stop the timer
         stopClock();
+
+        congratulate();
 
         // Update progress towards achievements
         checkAchievementsPractice();

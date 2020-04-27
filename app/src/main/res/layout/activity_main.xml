@@ -1,104 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/buttonContinuous"
+    <ImageView
+        android:id="@+id/imageBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginLarge"
-        android:layout_marginRight="@dimen/mainMarginSmall"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/continuous"
-        android:textSize="@dimen/mainFontSize"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHowToPlay"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/buttonTimed"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonTimed"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginSmall"
-        android:layout_marginRight="@dimen/mainMarginLarge"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/timed"
-        android:textSize="@dimen/mainFontSize"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPractice"
-        app:layout_constraintLeft_toRightOf="@+id/buttonContinuous"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonHowToPlay"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginLarge"
-        android:layout_marginRight="@dimen/mainMarginSmall"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/how_to_play"
-        android:textSize="@dimen/mainFontSize"
-        app:layout_constraintBottom_toTopOf="@+id/buttonScore"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/buttonPractice"
-        app:layout_constraintTop_toBottomOf="@+id/buttonContinuous" />
-
-    <Button
-        android:id="@+id/buttonPractice"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginSmall"
-        android:layout_marginRight="@dimen/mainMarginLarge"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/practice"
-        android:textSize="@dimen/mainFontSize"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAchievement"
-        app:layout_constraintLeft_toRightOf="@+id/buttonHowToPlay"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTimed" />
-
-    <Button
-        android:id="@+id/buttonScore"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginLarge"
-        android:layout_marginRight="@dimen/mainMarginSmall"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/scores"
-        android:textSize="@dimen/mainFontSize"
+    <ImageView
+        android:id="@+id/buttonMain"
+        android:layout_width="@dimen/button_main_size"
+        android:layout_height="@dimen/button_main_size"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:alpha="0.75"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/buttonAchievement"
-        app:layout_constraintTop_toBottomOf="@+id/buttonHowToPlay" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
-    <Button
-        android:id="@+id/buttonAchievement"
+    <ImageView
+        android:id="@+id/buttonPrevious"
+        android:layout_width="@dimen/otherButtonSize"
+        android:layout_height="@dimen/otherButtonSize"
+        android:layout_marginBottom="@dimen/otherButtonMargin"
+        android:layout_marginLeft="@dimen/otherButtonMargin"
+        android:alpha="0.75"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/nameSpace"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/buttonNext"
+        android:layout_width="@dimen/otherButtonSize"
+        android:layout_height="@dimen/otherButtonSize"
+        android:layout_marginBottom="@dimen/otherButtonMargin"
+        android:layout_marginRight="@dimen/otherButtonMargin"
+        android:alpha="0.75"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/nameSpace"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/nameSpace"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/mainMarginLarge"
-        android:layout_marginLeft="@dimen/mainMarginSmall"
-        android:layout_marginRight="@dimen/mainMarginLarge"
-        android:layout_marginTop="@dimen/mainMarginLarge"
-        android:background="@color/colorPrimary"
-        android:text="@string/achievements"
-        android:textSize="@dimen/mainFontSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/buttonScore"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPractice" />
+        android:layout_marginLeft="@dimen/margin_name_bar_horiz"
+        android:layout_marginRight="@dimen/margin_name_bar_horiz"
+        app:layout_constraintLeft_toRightOf="@+id/buttonPrevious"
+        app:layout_constraintRight_toLeftOf="@+id/buttonNext"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPrevious"
+        android:layout_marginBottom="@dimen/margin_name_bar_vert"
+        app:layout_constraintTop_toTopOf="@+id/buttonNext"
+        android:layout_marginTop="@dimen/margin_name_bar_vert" />
 </android.support.constraint.ConstraintLayout>

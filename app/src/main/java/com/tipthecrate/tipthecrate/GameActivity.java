@@ -8,19 +8,24 @@ package com.tipthecrate.tipthecrate;
  * Description: Contains the rules of the game
  */
 
+import android.content.SharedPreferences;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-//import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -30,7 +35,6 @@ import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListe
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-//import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -39,35 +43,8 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     // The board has thirty-six squares
     public static final int NUMBER_OF_SQUARES = 36;
 
-    // The board has four difficulty levels
-    //private static final int NUMBER_OF_DIFFICULTIES = 4;
-    //private DifficultyActivity difficultyArray[];
-
-    // Define the minimum number of pillars for each difficulty level
-    //private static final int PILLARS_BEGINNER_MIN = 4;
-    //private static final int PILLARS_INTERMEDIATE_MIN = 7;
-    //private static final int PILLARS_ADVANCED_MIN = 9;
-    //private static final int PILLARS_EXPERT_MIN = 9;
-
-    // Define the maximum number of pillars for each difficulty level
-    //private static final int PILLARS_BEGINNER_MAX = 8;
-    //private static final int PILLARS_INTERMEDIATE_MAX = 10;
-    //private static final int PILLARS_ADVANCED_MAX = 14;
-    //private static final int PILLARS_EXPERT_MAX = 16;
-
-    // Define the minimum number of moves for each difficulty level
-    //private static final int MOVES_BEGINNER_MIN = 3;
-    //private static final int MOVES_INTERMEDIATE_MIN = 5;
-    //private static final int MOVES_ADVANCED_MIN = 5;
-    //private static final int MOVES_EXPERT_MIN = 7;
-
-    // Define the maximum number of moves for each difficulty level
-    //private static final int MOVES_BEGINNER_MAX = 7;
-    //private static final int MOVES_INTERMEDIATE_MAX = 8;
-    //private static final int MOVES_ADVANCED_MAX = 10;
-    //private static final int MOVES_EXPERT_MAX = 10;
-
     // The height of different types of pillar
+    public static final int PILLAR_HEIGHT_ONE = 1;
     public static final int PILLAR_HEIGHT_TWO = 2;
     public static final int PILLAR_HEIGHT_THREE = 3;
     public static final int PILLAR_HEIGHT_FOUR = 4;
@@ -125,19 +102,13 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     public long timePaused = 0; // The time when the game moves to the background
 
     // The TextView widgets
-    private TextView textLevel;
-    private TextView textDifficulty;
-
-    // Levels in levels.txt are sorted based on difficultyCurrent
-    //private ArrayList<BoardActivity> boardsBeginner;
-    //private ArrayList<BoardActivity> boardsIntermediate;
-    //private ArrayList<BoardActivity> boardsAdvanced;
-    //private ArrayList<BoardActivity> boardsExpert;
+    public TextView textLevel;
+    public TextView textDifficulty;
 
     // The position of a players finger when they touch the screen
     // Defined here to ensure that they are assigned
-    int xStart = 0;
-    int yStart = 0;
+    public int xStart = 0;
+    public int yStart = 0;
 
     // Represents whether a continuous game is being played
     public static final boolean IS_GAME_CONTINUOUS = true;
@@ -149,11 +120,11 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
 
     // Assign data for an undo function
     public LinkedList<BoardActivity> undoList; // Assign data for a list to contain previous boards in a level
-    public Button buttonUndo;
+    public ImageView buttonUndo;
     public boolean isFirstMove = true; // Represent whether it is the first turn in a level
 
     // Assign data for a restartButton
-    public Button buttonRestart;
+    public ImageView buttonRestart;
 
     // The position of X and Y in an array
     public static final int POSITION_X = 0;
@@ -165,23 +136,34 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     // Define request codes for error reporting
     public static final int RC_ACHIEVEMENTS = 2;
 
+    // Relates to a timer
+    public Handler clockHandler;
+    public Runnable clockRunnable;
+
+    // Audio
+    public SoundPool soundPool;
+
+    // Relating to preferences
+    public SharedPreferences sharedPref;
+    public SharedPreferences.Editor sharedPrefEditor;
+    public static final String musicKey = "pref_music";
+    public static final String clickKey = "pref_click";
+    public static final String gameSoundsKey = "pref_game_sounds";
+    public Boolean isMusic;
+    public Boolean isClick;
+    public Boolean isGameSounds;
+    private int clickID;
+    private int fanfareID;
+    private int tauntID;
+
     // Reset the variables
-    public void setVariables(boolean isGameContinuous, boolean isGamePractice)
+    public void setVariables(boolean isGameContinuous)
     {
         // Create the GoogleApiClient
         createGoogleApiClient();
 
         // Get sprites
         setDrawables();
-
-        // Access the TextView widgets
-        getTextFields(isGamePractice);
-
-        // Populate the array of difficulties
-        //setDifficultyArray();
-
-        // Add the levels from levels.txt to lists based on difficulty
-        //getLevels();
 
         // Set the first difficulty
         difficultyCurrent = BEGINNER;
@@ -191,15 +173,34 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
         {
             // Instantiate the undoList
             undoList = new LinkedList<>();
+        }
 
-            // Access the undo button in the XML file
-            buttonUndo = (Button)findViewById(R.id.buttonUndo);
+        // Get whether sounds are turned on or off in preferences
+        setSharedPreferences();
+        setIsClick();
+        setIsGameSounds();
+        if (isClick || isGameSounds)
+        {
+            setSoundPool();
+
+            if (isClick)
+            {
+                setClick();
+            }
+
+            if (isGameSounds)
+            {
+                setFanfare();
+            }
         }
     }
 
     // Used to access the drawables
     private void setDrawables()
     {
+        // Add the images to activity_game.xml
+        setImages();
+
         // Get the crate sprites
         colorSquareEmpty = R.drawable.crate_empty;
         colorCrateTop = R.drawable.crate_top_gray;
@@ -209,120 +210,72 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
         colorGoal = R.drawable.crate_top_yellow;
     }
 
-    // Access the TextView widgets
-    private void getTextFields(boolean isGamePractice)
+    // Adds the images to activity_game.xml
+    private void setImages()
     {
-        // The practice game does not display a level
-        if(!isGamePractice)
-            textLevel = (TextView)findViewById(R.id.textLevel);
+        // Background
+        ImageView imageBackground = findViewById(R.id.imageBackground);
 
-        // All game modes display a difficulty
-        textDifficulty = (TextView)findViewById(R.id.textDifficulty);
+        Glide.with(this)
+                .load(R.drawable.background)
+                .into(imageBackground);
     }
 
-    /*
-    // Populate the array of difficulties
-    private void setDifficultyArray()
+    // Link to the game preferences
+    public void setSharedPreferences()
     {
-        // Instantiate the array of difficulties
-        difficultyArray = new DifficultyActivity[NUMBER_OF_DIFFICULTIES];
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+    }
 
-        // Create arrays of the minimum and maximum number of pillars in a level and number of moves
-        // required to complete a level
-        int pillarsMinimum[] = {PILLARS_BEGINNER_MIN, PILLARS_INTERMEDIATE_MIN, PILLARS_ADVANCED_MIN, PILLARS_EXPERT_MIN};
-        int pillarsMaximum[] = {PILLARS_BEGINNER_MAX, PILLARS_INTERMEDIATE_MAX, PILLARS_ADVANCED_MAX, PILLARS_EXPERT_MAX};
-        int movesMinimum[] = {MOVES_BEGINNER_MIN, MOVES_INTERMEDIATE_MIN, MOVES_ADVANCED_MIN, MOVES_EXPERT_MIN};
-        int movesMaximum[] = {MOVES_BEGINNER_MAX, MOVES_INTERMEDIATE_MAX, MOVES_ADVANCED_MAX, MOVES_EXPERT_MAX};
+    // Recognise whether the user wants to hear the click sound
+    public void setIsClick()
+    {
+        isClick = sharedPref.getBoolean(clickKey, true);
+    }
 
-        // Create an array of difficulty names
-        String difficultyNames[] = {getResources().getString(R.string.difficulty_first), getResources().getString(R.string.difficulty_second),
-                getResources().getString(R.string.difficulty_third), getResources().getString(R.string.difficulty_fourth)};
+    // Recognise whether the user wants to hear the game sounds
+    public void setIsGameSounds()
+    {
+        isGameSounds = sharedPref.getBoolean(gameSoundsKey, true);
+    }
 
-        // Instantiate the individual squares
-        for(int difficultyToSet = 0; difficultyToSet < NUMBER_OF_DIFFICULTIES; difficultyToSet++)
+    // Create the sound pool
+    public void setSoundPool()
+    {
+        // The sounds are part of a game and are triggered by user actions
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        // Up to one sound will be played at a time
+        soundPool = new SoundPool.Builder().setAudioAttributes(audioAttributes).setMaxStreams(1).build();
+    }
+
+    // Add the click sound to the sound pool
+    public void setClick()
+    {
+        if (isClick)
         {
-            difficultyArray[difficultyToSet] = new DifficultyActivity(pillarsMinimum[difficultyToSet], pillarsMaximum[difficultyToSet],
-                    movesMinimum[difficultyToSet], movesMaximum[difficultyToSet], difficultyNames[difficultyToSet]);
+            clickID = soundPool.load(this, R.raw.click, 1);
         }
     }
 
-    // Add the levels from levels.txt to lists based on difficulty
-    private void getLevels()
+    // Adds the sound for when the user wins a level to the sound pool
+    public void setFanfare()
     {
-            // Open levels.txt for reading
-            InputStream readLevels = this.getResources().openRawResource(R.raw.levels);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(readLevels));
-
-            // Allocate data for a list of lines from levels.txt
-            LinkedList<String> levels = new LinkedList<>();
-
-            // Add the levels from levels.txt to the list of lines
-            String line;
-            try
-            {
-                while ((line = bufferedReader.readLine()) != null)
-                {
-                    levels.add(line);
-                }
-            } catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
-            // Convert the strings to boards
-            LinkedList<BoardActivity> boardList = new LinkedList<>();
-            int levelsSize = levels.size();
-            for (int boardNumber = 0; boardNumber < levelsSize; boardNumber++)
-            {
-                boardList.addLast(new BoardActivity(levels.get(boardNumber), boardNumber));
-            }
-
-            // Separate boardList into ArrayLists based on difficulty
-            // ArrayLists are used because objects from them will be accessed at random
-            // Create a list of beginner boards
-            boardsBeginner = new ArrayList<>();
-            getLevelsOnDifficulty(boardList, boardsBeginner, BEGINNER);
-
-            // Create a list of intermediate boards
-            boardsIntermediate = new ArrayList<>();
-            getLevelsOnDifficulty(boardList, boardsIntermediate, INTERMEDIATE);
-
-            // Create a list of advanced boards
-            boardsAdvanced = new ArrayList<>();
-            getLevelsOnDifficulty(boardList, boardsAdvanced, ADVANCED);
-
-            // Create a list of expert boards
-            boardsExpert = new ArrayList<>();
-            getLevelsOnDifficulty(boardList, boardsExpert, EXPERT);
-    } // getLevels()
-
-    // Add boards in a list of boards to another list based on difficulty
-    public void getLevelsOnDifficulty(LinkedList<BoardActivity> fullList, ArrayList<BoardActivity> newList, int difficultyLevel)
-    {
-        // For each board in the list
-        for(BoardActivity boardToCheck : fullList)
+        if (isGameSounds)
         {
-            // Get the number of pillars on the board and the number of moves to complete the board
-            int numPillars = boardToCheck.getNumPillars();
-            int numMoves = boardToCheck.getNumMoves();
-
-            // Get the difficulty from the array of difficulties
-            DifficultyActivity difficultyToUse = difficultyArray[difficultyLevel];
-
-            // If the board meets the criteria of the given difficulty
-            if (numPillars >= difficultyToUse.getPillarsMinimum() && numPillars <= difficultyToUse.getPillarsMaximum() &&
-                    numMoves >= difficultyToUse.getMovesMinimum() && numMoves <= difficultyToUse.getMovesMaximum())
-                newList.add(boardToCheck);
+            fanfareID = soundPool.load(this, R.raw.fanfare, 1);
         }
     }
-    */
 
     // Create a completable new level
     public void newLevel(boolean isContinuousGame, boolean isGamePractice)
     {
         // Change the level displayed
         if(!isGamePractice && (level <= LAST_DISPLAYED_LEVEL))
-            textLevel.setText(getResources().getString(R.string.level) + ": " + level);
+            textLevel.setText(getString(R.string.level, level));
 
         // Create a Random object
         Random random = new Random();
@@ -405,7 +358,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
                 for(int tipSquare = 1 ; tipSquare <= pillarHeight ; tipSquare++)
                 {
                     newBoard.getSquare(squareTippedID - (tipSquare * 6)).setAttributes
-                            (pillarHeight, true, false);
+                            (PILLAR_HEIGHT_ONE, true, false);
                 }
 
                 // Move the player to the end of the tipped pillar
@@ -418,7 +371,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
                 for(int tipSquare = 1 ; tipSquare <= pillarHeight ; tipSquare++)
                 {
                     newBoard.getSquare(squareTippedID + tipSquare).setAttributes
-                            (pillarHeight, true, false);
+                            (PILLAR_HEIGHT_ONE, true, false);
                 }
 
                 // Move the player to the end of the tipped pillar
@@ -431,7 +384,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
                 for(int tipSquare = 1 ; tipSquare <= pillarHeight ; tipSquare++)
                 {
                     newBoard.getSquare(squareTippedID + (tipSquare * 6)).setAttributes
-                            (pillarHeight, true, false);
+                            (PILLAR_HEIGHT_ONE, true, false);
                 }
 
                 // Move the player to the end of the tipped pillar
@@ -444,7 +397,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
                 for(int tipSquare = 1 ; tipSquare <= pillarHeight ; tipSquare++)
                 {
                     newBoard.getSquare(squareTippedID - tipSquare).setAttributes
-                            (pillarHeight, true, false);
+                            (PILLAR_HEIGHT_ONE, true, false);
                 }
 
                 // Move the player to the end of the tipped pillar
@@ -579,7 +532,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             // Access the square in the display file
             String buttonID = "button" + square;
             int resourceID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = (Button) findViewById(resourceID);
+            Button button = findViewById(resourceID);
 
             // Access the square in the board
             SquareActivity boardSquare = boardToPaint.getSquare(square);
@@ -588,7 +541,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             if(boardSquare.getID() == boardToPaint.getGoalSquareID())
             {
                 squareColor = colorGoal;
-                heightString = "1";
+                heightString = "";
             }
 
             // If it is an empty square
@@ -895,6 +848,8 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
         // Update the display
         paintBoard(boardCurrent);
 
+        playClick();
+
         // If it is the first turn of this level
         if(isFirstMove)
         {
@@ -909,6 +864,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     // Displays the undo button and add its functionality
     public void addButtonUndo()
     {
+        setUndoButtonImage();
         buttonUndo.setVisibility(View.VISIBLE);
         buttonUndo.setOnClickListener(new View.OnClickListener()
         {
@@ -919,6 +875,8 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
 
                 // Update the display to reflect the previous board
                 paintBoard(boardCurrent);
+
+                playClick();
 
                 // Remove the button if undoList is empty
                 if (undoList.size() < 1)
@@ -936,17 +894,17 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
         return touchXY;
     }
 
-    // Change the color of the board
+    // Can be used to change the color of the board
     public void setBoardColor(int givenColor)
     {
         // Get the board layout
-        ConstraintLayout boardDisplay = (ConstraintLayout)findViewById(R.id.boardOuter);
+        ConstraintLayout boardDisplay = findViewById(R.id.boardOuter);
 
         // Get the color to use for the board
         // The default is yellow
         int boardColor = R.color.yellow;
 
-        // Change the color to red on request
+        // Change the color on request
         if (givenColor == RED)
             boardColor = R.color.red;
 
@@ -980,7 +938,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
         });
 
         // Hide the restart button
-        (buttonRestart = (Button)findViewById(R.id.buttonRestart)).setVisibility(View.GONE);
+        buttonRestart.setVisibility(View.GONE);
     }
 
     // Create the GoogleApiClient
@@ -998,21 +956,18 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
                         .addOnConnectionFailedListener(this)
                         .addApi(Games.API).addScope(Games.SCOPE_GAMES)
                         .build();
-
-                //Toast toast = Toast.makeText(this, "GoogleAPIClient created", Toast.LENGTH_SHORT);
-                //toast.show();
             }
 
             // Inform the user of an error
             catch(Exception e)
             {
-                Toast toast = Toast.makeText(this, "The GoogleApiClient could not be created at this time", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(this, getText(R.string.google_created_not), Toast.LENGTH_SHORT);
                 toast.show();
             }
         }
         else
         {
-            Toast toast = Toast.makeText(this, "Google Play Services are unavailable", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, getText(R.string.google_unavailable), Toast.LENGTH_SHORT);
             toast.show();
         }
     } // createGoogleApiClient()
@@ -1045,8 +1000,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             // Instruct the user to update Google Play Services to attempt to solve any other error
             else
             {
-                Toast toast = Toast.makeText(this, "You must update your Google Play Services to " +
-                        "use Google Play features of this application", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(this, getText(R.string.google_update), Toast.LENGTH_SHORT);
                 toast.show();
             }
         }
@@ -1062,14 +1016,11 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             if(!mGoogleApiClient.isConnected())
             {
                 mGoogleApiClient.connect();
-
-                // Inform the user that the application is connecting to Google Play Services
-                //connectGooglePlayMessage();
             }
         }
         catch(Exception e)
         {
-            Toast toast = Toast.makeText(this, "Could not connect to Google Play Services", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, getText(R.string.google_connect_not), Toast.LENGTH_SHORT);
             toast.show();
         }
     }
@@ -1077,7 +1028,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     // Inform the user that the application is connecting to Google Play Services
     public void connectGooglePlayMessage()
     {
-        Toast toast = Toast.makeText(this, "Connecting to Google Play Services...", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, getText(R.string.google_connecting), Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -1089,14 +1040,11 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             if (mGoogleApiClient.isConnected())
             {
                 mGoogleApiClient.disconnect();
-
-                //Toast toast = Toast.makeText(this, "Disconnected from Google Play Services", Toast.LENGTH_SHORT);
-                //toast.show();
             }
         }
         catch(Exception e)
         {
-            Toast toast = Toast.makeText(this, "Could not disconnect from Google Play Services", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, getText(R.string.google_disconnect_not), Toast.LENGTH_SHORT);
             toast.show();
         }
     }
@@ -1106,6 +1054,15 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     {
         // Paint the board red to indicate failure
         setBoardColor(RED);
+
+        if(isGameSounds)
+        {
+            playTaunt();
+        }
+        else if(isClick)
+        {
+            playClick();
+        }
 
         // Remove listeners from the board
         removeListeners();
@@ -1120,7 +1077,7 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
             // Access the button in the display file
             String buttonID = "button" + square;
             int resourceID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = (Button) findViewById(resourceID);
+            Button button = findViewById(resourceID);
 
             // Set a new listener that does not do anything
             button.setOnTouchListener(new View.OnTouchListener()
@@ -1144,27 +1101,28 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     // Inform the user that the score was uploaded to the Google Play Services
     public void showScore(int score)
     {
-        Toast toast = Toast.makeText(this, "You scored " + score + "!", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, getString(R.string.scored, score), Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    // Manages a timer
-    Handler clockHandler = new Handler();
-    Runnable clockRunnable = new Runnable()
+    public void setClock()
     {
-        @Override
-        public void run()
-        {
-            // Decrement the time
-            time++;
+        // Manages a timer
+        clockHandler = new Handler();
+        clockRunnable = new Runnable() {
+            @Override
+            public void run() {
+                // Decrement the time
+                time++;
 
-            // Record the time
-            timeLastCall = SystemClock.elapsedRealtime();
+                // Record the time
+                timeLastCall = SystemClock.elapsedRealtime();
 
-            // The method will run again in a second
-            clockHandler.postDelayed(clockRunnable, ONE_SECOND);
-        }
-    } /* timerRunnable() */;
+                // The method will run again in a second
+                clockHandler.postDelayed(clockRunnable, ONE_SECOND);
+            }
+        } /* clockRunnable() */;
+    }
 
     // Starts a timer
     public void startClock()
@@ -1174,9 +1132,6 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
 
         //Start the timer
         clockHandler.postDelayed(clockRunnable, ONE_SECOND);
-
-        //Toast toast = Toast.makeText(getApplicationContext(), "Clock started", Toast.LENGTH_SHORT);
-        //toast.show();
     }
 
     // Unlocks 'All Time Crate' achievement if criteria are met
@@ -1199,9 +1154,90 @@ public class GameActivity extends AppCompatActivity implements ConnectionCallbac
     public void stopClock()
     {
         clockHandler.removeCallbacks(clockRunnable);
+    }
 
-        //Toast toast = Toast.makeText(getApplicationContext(), "Clock stopped", Toast.LENGTH_SHORT);
-        //toast.show();
+    // Loads the image for the undo button
+    public void setUndoButtonImage()
+    {
+        Glide.with(this)
+                .load(R.drawable.button_undo)
+                .into(buttonUndo);
+    }
+
+    // Loads the image for the restart button
+    public void setRestartButtonImage()
+    {
+        Glide.with(this)
+                .load(R.drawable.button_restart)
+                .into(buttonRestart);
+    }
+
+    // Highlights that the user has completed a level
+    public void congratulate()
+    {
+        if(isGameSounds)
+        {
+            playFanfare();
+        }
+        else if(isClick)
+        {
+            playClick();
+        }
+
+        Toast toast = Toast.makeText(this, getText(R.string.congratulations), Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    // Adds the sound for when the user loses a level to the sound pool
+    public void setTaunt()
+    {
+        if (isGameSounds)
+        {
+            tauntID = soundPool.load(this, R.raw.taunt, 1);
+        }
+    }
+
+    // Plays the click sound
+    public void playClick()
+    {
+        if (isClick)
+        {
+            soundPool.play(clickID, 1, 1, 0, 0, 1);
+        }
+    }
+
+    // Play the sound for when the user wins a level
+    public void playFanfare()
+    {
+        if (isGameSounds)
+        {
+            soundPool.play(fanfareID, 1, 1, 0, 0, 1);
+        }
+    }
+
+    // Play the sound for when the user loses a level
+    public void playTaunt()
+    {
+        if (isGameSounds)
+        {
+            soundPool.play(tauntID, 1, 1, 0, 0, 1);
+        }
+    }
+
+    // Recognise whether the user wants to hear music
+    public void setIsMusic()
+    {
+        isMusic = sharedPref.getBoolean(musicKey, true);
+    }
+
+    // Clears the sound pool from the memory
+    public void releaseSoundPool()
+    {
+        if (soundPool != null)
+        {
+            soundPool.release();
+            soundPool = null;
+        }
     }
 
     /* Used to manage connection to Google Play Services */

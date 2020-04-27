@@ -8,8 +8,8 @@
     <string msgid="4076576682505996667" name="abc_action_mode_done">"Listo"</string>
     <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Ver todo"</string>
     <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Seleccionar una aplicación"</string>
-    <string msgid="121134116657445385" name="abc_capital_off">"NO"</string>
-    <string msgid="3405795526292276155" name="abc_capital_on">"SÍ"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"DESACTIVADO"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"ACTIVADO"</string>
     <string msgid="7723749260725869598" name="abc_search_hint">"Buscar…"</string>
     <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Borrar consulta"</string>
     <string msgid="2550479030709304392" name="abc_searchview_description_query">"Consulta"</string>
@@ -19,9 +19,6 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Compartir con %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
-    <string name="achievements">logros</string>
-    <string name="app_name">Empuja las Cajas</string>
-    <string name="brown_access">Puede acceder a las casillas marrones pero debe mover las cajas para llegar a las casillas de color gris o amarillo</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Habilitar"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no funcionará hasta que no habilites Servicios de Google Play."</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Habilita Servicios de Google Play"</string>
@@ -39,29 +36,6 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"Abrir en teléfono"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"Iniciar sesión"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Iniciar sesión con Google"</string>
-    <string name="continuous">continuo</string>
-    <string name="difficulty_first">principiante</string>
-    <string name="difficulty_fourth">experto</string>
-    <string name="difficulty_increase">La dificultad aumenta a medida que el juego progresa</string>
-    <string name="difficulty_second">intermedio</string>
-    <string name="difficulty_third">avanzado</string>
-    <string name="good_luck">¡Buena suerte!</string>
-    <string name="how_to_play">cómo jugar</string>
-    <string name="leader_board_cont">Continuo</string>
-    <string name="leader_board_timed">Temporizado</string>
-    <string name="level">nivel</string>
-    <string name="level_sample">nivel: 99999</string>
-    <string name="pillars_flick">Flick los pilares para empujarlos</string>
-    <string name="pillars_numbered">Los pilares están numerados con su altura</string>
-    <string name="practice">práctica</string>
-    <string name="practice_use">Usa el modo de práctica para mejorar tus habilidades</string>
-    <string name="score">puntuación</string>
-    <string name="score_sample">puntuación: 99999</string>
-    <string name="scores">puntuaciones</string>
     <string msgid="146198913615257606" name="search_menu_title">"Buscar"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
-    <string name="timed">temporizado</string>
-    <string name="tip_can">Puede mover estos cuadros</string>
-    <string name="tip_can_not">Pero no estos cajas</string>
-    <string name="win">Usted gana un nivel cuando llega a la caja amarilla</string>
 </resources>

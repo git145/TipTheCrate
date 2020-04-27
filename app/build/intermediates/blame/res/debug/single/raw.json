@@ -1,6 +1,30 @@
 [
     {
-        "merged": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\levels.txt",
-        "source": "C:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\src\\main\\res\\raw\\levels.txt"
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\levels.txt",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\levels.txt"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\fanfare.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\fanfare.mp3"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\taunt.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\taunt.mp3"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\click.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\click.mp3"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\main_theme.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\main_theme.mp3"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\motif.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\motif.mp3"
+    },
+    {
+        "merged": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\res\\merged\\debug\\raw\\bass.mp3",
+        "source": "C:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\src\\main\\res\\raw\\bass.mp3"
     }
 ]

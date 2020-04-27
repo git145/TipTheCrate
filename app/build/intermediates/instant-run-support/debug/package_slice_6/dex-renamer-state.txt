@@ -1,4 +1,4 @@
-#Wed Jul 19 11:59:04 BST 2017
-base.0=C\:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6
+#Thu Sep 14 11:11:47 BST 2017
+base.0=C\:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6
 renamed.0=classes.dex
-file.0=C\:\\Users\\owner\\AndroidStudioProjects\\TipTheCrate\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6\\classes.dex
+file.0=C\:\\Users\\owner\\Downloads\\TipTheCratesV1.0.0\\TipTheCrate\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6\\classes.dex

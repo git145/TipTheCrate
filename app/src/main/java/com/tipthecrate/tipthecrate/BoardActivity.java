@@ -31,8 +31,6 @@ public class BoardActivity extends AppCompatActivity
     private int predecessorCrateTippedID = -1;
 
     // These values can be derived but appear here to improve performance
-    private int numPillars = -1; // The number of pillars
-    private int numMoves = -1; // The number of moves required to complete the board
     private int playerSquareID = -1; // The position of the player on the board
     private int goalSquareID = -1; // The ID of the square containing the goal crate
 
@@ -71,8 +69,6 @@ public class BoardActivity extends AppCompatActivity
         }
 
         // Set other statistics of the board
-        numPillars = Integer.parseInt(values.get(36));
-        numMoves = Integer.parseInt(values.get(37));
         playerSquareID = Integer.parseInt(values.get(38));
         goalSquareID = Integer.parseInt(values.get(39));
         boardID = iD;
@@ -173,14 +169,6 @@ public class BoardActivity extends AppCompatActivity
     public int getGoalSquareID()
     {
         return goalSquareID;
-    }
-
-    // Returns the number of pillars on the board
-    public int getNumPillars() { return numPillars; }
-
-    // Returns the number of moves to complete the board
-    public int getNumMoves() {
-        return numMoves;
     }
 
     // Returns the ID of the board
