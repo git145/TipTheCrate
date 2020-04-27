@@ -120,7 +120,7 @@ public class SquareActivity extends AppCompatActivity
     {
         height = pillarHeight;
 
-        if(height > 0)
+        if(height > 1)
         {
             heightString = String.valueOf(height);
         }

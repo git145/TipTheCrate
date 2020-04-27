@@ -1,193 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layoutOuter"
+    android:id="@+id/constraintLayoutOther"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/layoutHoriz0"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_gravity="center_vertical|clip_horizontal"
-
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
-
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingBottom="0dp"
-
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutHoriz1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="@string/brown_access"
-            android:textColor="@color/white"
-            android:textSize="@dimen/fontSize" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutHoriz1"
-        android:layout_width="match_parent"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutInner"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_weight="2"
-
-        android:orientation="horizontal"
-        android:paddingBottom="0dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutHoriz2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHoriz0">
-
-        <ImageView
-            android:id="@+id/imageView0"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/how_to_play_image_0" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutHoriz2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
-
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-
-        android:paddingBottom="0dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutHoriz3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHoriz1">
+        app:layout_constraintTop_toTopOf="parent" >
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text="@string/win"
-            android:textColor="@color/white"
-            android:textSize="@dimen/fontSize" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:id="@+id/layoutHoriz3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+            <LinearLayout
+                android:id="@+id/layoutHoriz0"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layoutHoriz1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
+                <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/brown_access"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontSize" />
+            </LinearLayout>
 
-        android:layout_weight="2"
-        android:orientation="horizontal"
-        android:paddingBottom="0dp"
+            <LinearLayout
+                android:id="@+id/layoutHoriz1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layoutHoriz2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHoriz0">
 
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutHoriz4"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHoriz2">
+                <ImageView
+                    android:id="@+id/imageView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/crate_top_yellow" />
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutHoriz2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layoutHoriz3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHoriz1">
 
-    <LinearLayout
-        android:id="@+id/layoutHoriz4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/win"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontSize" />
+            </LinearLayout>
 
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
+            <LinearLayout
+                android:id="@+id/layoutHoriz3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layoutHoriz4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHoriz2">
 
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:paddingBottom="0dp"
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutFooter"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutHoriz3">
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/buttonPrevious"
-                android:layout_width="@dimen/otherButtonSize"
-                android:layout_height="@dimen/otherButtonSize"
-                android:layout_marginBottom="@dimen/otherButtonMargin"
-                android:layout_marginLeft="@dimen/otherButtonMargin"
-                android:background="@drawable/button_previous"
-                android:onClick="getPageZero"
+            <LinearLayout
+                android:id="@+id/layoutHoriz4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutHoriz3">
 
-            <Button
-                android:id="@+id/buttonNext"
-                android:layout_width="@dimen/otherButtonSize"
-                android:layout_height="@dimen/otherButtonSize"
-                android:layout_marginBottom="@dimen/otherButtonMargin"
-                android:layout_marginRight="@dimen/otherButtonMargin"
-                android:background="@drawable/button_next"
-                android:onClick="getPageTwo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
-        </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/buttonPrevious"
+                        android:layout_width="@dimen/otherButtonSize"
+                        android:layout_height="@dimen/otherButtonSize"
+                        android:layout_marginBottom="@dimen/otherButtonMargin"
+                        android:layout_marginLeft="@dimen/otherButtonMargin"
+                        android:layout_marginStart="@dimen/otherButtonMargin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent" />
 
-</LinearLayout>
+                    <ImageView
+                        android:id="@+id/buttonNext"
+                        android:layout_width="@dimen/otherButtonSize"
+                        android:layout_height="@dimen/otherButtonSize"
+                        android:layout_marginBottom="@dimen/otherButtonMargin"
+                        android:layout_marginEnd="@dimen/otherButtonMargin"
+                        android:layout_marginRight="@dimen/otherButtonMargin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

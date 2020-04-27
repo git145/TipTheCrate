@@ -9,14 +9,19 @@
     <item name="abc_dialog_min_width_minor" type="dimen">80%</item>
     <dimen name="boardInnerMargin">20dp</dimen>
     <dimen name="boardSize">550dp</dimen>
+    <dimen name="button_main_size">450dp</dimen>
     <dimen name="fontSize">24sp</dimen>
     <dimen name="mainFontSize">20dp</dimen>
     <dimen name="mainMarginLarge">64dp</dimen>
     <dimen name="mainMarginSmall">32dp</dimen>
+    <dimen name="margin_name_bar_horiz">24dp</dimen>
+    <dimen name="margin_name_bar_vert">8dp</dimen>
     <dimen name="otherButtonMargin">16dp</dimen>
     <dimen name="otherButtonSize">60dp</dimen>
     <dimen name="otherButtonSizeGame">50dp</dimen>
     <dimen name="spacingButton">16dp</dimen>
+    <dimen name="text_box_width">240dp</dimen>
+    <dimen name="text_size_settings">150dp</dimen>
     <style name="Base.Theme.AppCompat.DialogWhenLarge" parent="Base.Theme.AppCompat.Dialog.FixedSize"/>
     <style name="Base.Theme.AppCompat.Light.DialogWhenLarge" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize"/>
 </resources>

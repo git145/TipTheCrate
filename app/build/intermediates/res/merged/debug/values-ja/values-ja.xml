@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <dimen name="mainFontSize">9dp</dimen>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"ホームへ移動"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s、%2$s"</string>
     <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s、%2$s、%3$s"</string>
@@ -20,9 +19,6 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"共有"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"%sと共有"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"折りたたむ"</string>
-    <string name="achievements">トロフィーキャビネット</string>
-    <string name="app_name">箱を押してください</string>
-    <string name="brown_access">茶色のボックスにアクセスできますが、ボックスを灰色または黄色のボックスに移動する必要があります</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"有効にする"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g>の実行には、Google Play開発者サービスの有効化が必要です。"</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Google Play開発者サービスの有効化"</string>
@@ -40,29 +36,6 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"スマートフォンで開く"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"ログイン"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Googleにログイン"</string>
-    <string name="continuous">連続</string>
-    <string name="difficulty_first">初心者</string>
-    <string name="difficulty_fourth">専門家</string>
-    <string name="difficulty_increase">ゲームが進行するにつれて難易度が上がります</string>
-    <string name="difficulty_second">中級</string>
-    <string name="difficulty_third">高度な</string>
-    <string name="good_luck">がんばろう！</string>
-    <string name="how_to_play">遊び方</string>
-    <string name="leader_board_cont">連続</string>
-    <string name="leader_board_timed">時間制限</string>
-    <string name="level">レベル</string>
-    <string name="level_sample">レベル：999999</string>
-    <string name="pillars_flick">ボックスをスワイプしてプッシュします</string>
-    <string name="pillars_numbered">柱はその高さで番号が付けられています</string>
-    <string name="practice">練習</string>
-    <string name="practice_use">練習試合であなたのスキルレベルを向上させる</string>
-    <string name="score">スコア</string>
-    <string name="score_sample">スコア: 99999</string>
-    <string name="scores">リーダーボード</string>
     <string msgid="146198913615257606" name="search_menu_title">"検索"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
-    <string name="timed">時間制限</string>
-    <string name="tip_can">これらのボックスを移動することができます</string>
-    <string name="tip_can_not">しかし、これらのボックスには到達できません</string>
-    <string name="win">あなたは黄色の木枠に達するとレベルに勝つ</string>
 </resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutOuter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <ImageView
+        android:id="@+id/musicText"
+        android:layout_width="@dimen/text_size_settings"
+        android:layout_height="@dimen/text_size_settings"
+        app:layout_constraintBottom_toTopOf="@+id/clickText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/musicSwitch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/musicSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showText="true"
+        android:splitTrack="false"
+        android:textOff="@string/off"
+        android:textOn="@string/on"
+        app:layout_constraintBottom_toBottomOf="@+id/musicText"
+        app:layout_constraintLeft_toRightOf="@+id/musicText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/musicText"
+        tools:checked="false" />
+
+    <ImageView
+        android:id="@+id/clickText"
+        android:layout_width="@dimen/text_size_settings"
+        android:layout_height="@dimen/text_size_settings"
+        app:layout_constraintBottom_toTopOf="@+id/gameSoundsText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/clickSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/musicText" />
+
+    <Switch
+        android:id="@+id/clickSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showText="true"
+        android:textColor="@color/white"
+        android:textOff="@string/off"
+        android:textOn="@string/on"
+        android:textSize="@dimen/fontSize"
+        app:layout_constraintBottom_toBottomOf="@+id/clickText"
+        app:layout_constraintLeft_toRightOf="@+id/clickText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/clickText" />
+
+    <ImageView
+        android:id="@+id/gameSoundsText"
+        android:layout_width="@dimen/text_size_settings"
+        android:layout_height="@dimen/text_size_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gameSoundsSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/clickText" />
+
+    <Switch
+        android:id="@+id/gameSoundsSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:showText="true"
+        android:textColor="@color/white"
+        android:textOff="@string/off"
+        android:textOn="@string/on"
+        android:textSize="@dimen/fontSize"
+        app:layout_constraintBottom_toBottomOf="@+id/gameSoundsText"
+        app:layout_constraintLeft_toRightOf="@+id/gameSoundsText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gameSoundsText" />
+
+</android.support.constraint.ConstraintLayout>

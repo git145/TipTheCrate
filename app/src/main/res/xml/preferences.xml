@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_audio_title"
+        android:key="pref_key_audio_settings">
+
+        <CheckBoxPreference
+            android:key="pref_music"
+            android:title="@string/music"
+            android:summary="@string/music_summ"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pref_click"
+            android:title="@string/click_sound"
+            android:summary="@string/click_sound_summ"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="pref_game_sounds"
+            android:title="@string/game_sounds"
+            android:summary="@string/game_sounds_summ"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

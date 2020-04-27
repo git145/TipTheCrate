@@ -31,7 +31,17 @@ public class GameTimedActivity extends GameActivity
 
     // The score
     private int score;
+    private TextView scoreText;
     private static final int SCORE_LAST_DISPLAYED = 99999;
+
+    // Relates to the timer
+    private TextView timer;
+    private Handler timerHandler;
+    private Runnable timerRunnable;
+
+    // Colours
+    private int red;
+    private int white;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,10 +51,14 @@ public class GameTimedActivity extends GameActivity
         super.onCreate(savedInstanceState);
 
         // Display the associated XML file on a device
-        setContentView(R.layout.activity_timed_game);
+        setContentView(R.layout.activity_game);
 
-        // Reset the variables in GameActivity
-        setVariables(isGameContinuous, isGamePractice);
+        // Reset variables
+        setVariables(isGameContinuous);
+        setVariablesGameTimed();
+
+        // Set up the timer
+        setTimer();
 
         // Start the first level of the game
         startFirstLevelTimed();
@@ -90,6 +104,71 @@ public class GameTimedActivity extends GameActivity
 
         // Stop the timer
         stopTimer();
+
+        // Clear the sound pool from the memory
+        releaseSoundPool();
+    }
+
+    private void setVariablesGameTimed()
+    {
+        // Access the text fields
+        textLevel = findViewById(R.id.text0);
+        textDifficulty = findViewById(R.id.text1);
+        scoreText = findViewById(R.id.text2);
+        timer = findViewById(R.id.text3);
+
+        // Access colours
+        white = ContextCompat.getColor(getApplicationContext(), R.color.white);
+        red = ContextCompat.getColor(getApplicationContext(), R.color.red);
+
+        // Access the restart button
+        buttonUndo = findViewById(R.id.buttonCenter);
+        buttonRestart = findViewById(R.id.buttonCenter);
+
+        // Set the taunt sound
+        if (isGameSounds)
+        {
+            setTaunt();
+        }
+    }
+
+    // Set up the timer
+    private void setTimer()
+    {
+        // Add the handler to the thread
+        timerHandler = new Handler();
+
+        // Set the activities for the timer
+        timerRunnable = new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                // If time has expired
+                if(time == 0)
+                {
+                    // Resolve the result of failure
+                    endTimedGame();
+                }
+                else
+                {
+                    // If the time should turn red on the display
+                    if(time == timeRed)
+                    {
+                        timer.setTextColor(red);
+                    }
+
+                    // Change the time displayed on the interface and decrement the timer
+                    timer.setText(String.valueOf(time--));
+
+                    // Record the time
+                    timeLastCall = SystemClock.elapsedRealtime();
+
+                    // The method will run again in a second
+                    timerHandler.postDelayed(this, ONE_SECOND);
+                }
+            }
+        } /* timerRunnable() */ ;
     }
 
     // Begins the first level of a continuous game
@@ -109,8 +188,7 @@ public class GameTimedActivity extends GameActivity
     // Set the score displayed on the interface
     private void setScore()
     {
-        ((TextView)findViewById(R.id.textScore)).setText(getResources().getString(R.string.score) +
-                ": " + score);
+        scoreText.setText(getString(R.string.score, score));
     }
 
     // Begins a new level
@@ -133,44 +211,14 @@ public class GameTimedActivity extends GameActivity
     private void startTimer()
     {
         // Reset the timer
+        if (time <= timeRed) // If timer has turned red
+            timer.setTextColor(white); // Set the timer to white on the display
+
         time = TIME_START;
 
         // Start the timer
         timerHandler.postDelayed(timerRunnable, NOW);
     }
-
-    // Manages the timer
-    Handler timerHandler = new Handler();
-    Runnable timerRunnable = new Runnable()
-    {
-        @Override
-        public void run()
-        {
-            // If time has expired
-            if(time == 0)
-            {
-                // Resolve the result of failure
-                endTimedGame();
-            }
-            else
-            {
-                // If the time should turn red on the display
-                if(time == timeRed)
-                {
-                    ((TextView)findViewById(R.id.textTime)).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.red));
-                }
-
-                // Change the time displayed on the interface and decrement the timer
-                ((TextView)findViewById(R.id.textTime)).setText(String.valueOf(time--));
-
-                // Record the time
-                timeLastCall = SystemClock.elapsedRealtime();
-
-                // The method will run again in a second
-                timerHandler.postDelayed(this, ONE_SECOND);
-            }
-        }
-    } /* timerRunnable() */;
 
     // Add functionality to the buttons on the board
     private void addListeners()
@@ -181,7 +229,7 @@ public class GameTimedActivity extends GameActivity
             // Access the button in the display file
             String buttonID = "button" + square;
             int resourceID = getResources().getIdentifier(buttonID, "id", getPackageName());
-            Button button = (Button) findViewById(resourceID);
+            Button button = findViewById(resourceID);
 
             // Add an ID to the button
             button.setTag(square);
@@ -275,6 +323,8 @@ public class GameTimedActivity extends GameActivity
         // Stop the timer
         stopTimer();
 
+        congratulate();
+
         // Update progress towards achievements in the timed game
         checkAchievementsTimed();
 
@@ -349,25 +399,28 @@ public class GameTimedActivity extends GameActivity
     private void endTimedGame()
     {
         // Change the time displayed on the interface
-        ((TextView)findViewById(R.id.textTime)).setText(String.valueOf(time));
+        timer.setText(String.valueOf(time));
 
         // Perform common actions that result from failure
         resolveFailure();
 
-        // Clear undoList and remove buttonUndo
-        removeUndo();
+        // Clear undoList
+        undoList.clear();
+
+        // Recognise that it is the first turn of a new level
+        isFirstMove = true;
 
         // Upload the score to the leader board if it is the user's best
         uploadTimedScore();
 
         // Add a restart button
-        (buttonRestart = (Button)findViewById(R.id.buttonRestart)).setVisibility(View.VISIBLE);
+        buttonRestart.setVisibility(View.VISIBLE);
+        setRestartButtonImage();
         buttonRestart.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                // Set the timer to white on the display
-                ((TextView)findViewById(R.id.textTime)).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
+                playClick();
 
                 // Begin a new timed game
                 newTimedGame();
@@ -404,23 +457,4 @@ public class GameTimedActivity extends GameActivity
         // Begin a new timed game
         startFirstLevelTimed();
     }
-
-    /*
-    // Called when the user presses the pause button
-    private void pauseGame()
-    {
-        // Stop the timer
-        stopTimer();
-
-        // Record the time at which the game was paused
-        timePaused = SystemClock.elapsedRealtime();
-    }
-
-    // Called when the user presses the pause button a second time
-    private void resumeGame()
-    {
-        // Restart the timer
-        timerHandler.postDelayed(timerRunnable, ONE_SECOND - (timePaused - timeLastCall));
-    }
-    */
 }

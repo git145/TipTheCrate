@@ -4,12 +4,4 @@
     <dimen name="abc_action_bar_progress_bar_size">32dp</dimen>
     <dimen name="abc_text_size_subtitle_material_toolbar">12dp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">14dp</dimen>
-    <dimen name="boardSize">220dp</dimen>
-    <dimen name="fontSize">12sp</dimen>
-    <dimen name="mainMarginLarge">16dp</dimen>
-    <dimen name="mainMarginSmall">32dp</dimen>
-    <dimen name="otherButtonMargin">8dp</dimen>
-    <dimen name="otherButtonSize">20dp</dimen>
-    <dimen name="otherButtonSizeGame">30dp</dimen>
-    <dimen name="spacingButton">6dp</dimen>
 </resources>
